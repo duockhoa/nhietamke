@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/nhietamke/static/css/main.81e50390.css",
-    "main.js": "/nhietamke/static/js/main.22747439.js",
+    "main.js": "/nhietamke/static/js/main.308327a6.js",
     "static/js/453.acb29459.chunk.js": "/nhietamke/static/js/453.acb29459.chunk.js",
     "static/media/logo.svg": "/nhietamke/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/nhietamke/index.html",
     "main.81e50390.css.map": "/nhietamke/static/css/main.81e50390.css.map",
-    "main.22747439.js.map": "/nhietamke/static/js/main.22747439.js.map",
+    "main.308327a6.js.map": "/nhietamke/static/js/main.308327a6.js.map",
     "453.acb29459.chunk.js.map": "/nhietamke/static/js/453.acb29459.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.81e50390.css",
-    "static/js/main.22747439.js"
+    "static/js/main.308327a6.js"
   ]
 }
