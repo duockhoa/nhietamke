@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/nhietamke/static/css/main.1c378901.css",
-    "main.js": "/nhietamke/static/js/main.de834fc0.js",
+    "main.js": "/nhietamke/static/js/main.047dfdcd.js",
     "static/js/453.acb29459.chunk.js": "/nhietamke/static/js/453.acb29459.chunk.js",
     "index.html": "/nhietamke/index.html",
     "main.1c378901.css.map": "/nhietamke/static/css/main.1c378901.css.map",
-    "main.de834fc0.js.map": "/nhietamke/static/js/main.de834fc0.js.map",
+    "main.047dfdcd.js.map": "/nhietamke/static/js/main.047dfdcd.js.map",
     "453.acb29459.chunk.js.map": "/nhietamke/static/js/453.acb29459.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1c378901.css",
-    "static/js/main.de834fc0.js"
+    "static/js/main.047dfdcd.js"
   ]
 }
