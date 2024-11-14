@@ -27,15 +27,15 @@ export default function DenseTable() {
 
     useEffect(()=>{
         let timeId = setInterval(()=> {
-            fetch('https://script.googleusercontent.com/a/macros/dkpharma.vn/echo?user_content_key=roKe7oNgCXOrqsxMvSTDXbhxzx40CtB-lNp_SDeunDkMYduyiANQBVHZDbhU6UzbRl9w4QHBQCWf0paFoddP00v7omkQVCOpOJmA1Yb3SEsKFZqtv3DaNYcMrmhZHmUMi80zadyHLKDb6QZ2lUmqFsCZMNkFlWVUh0lmODcuY_0xJh9m3gQ6Cz1wqwbgjB9Pm8QJ8aask_MZfQdot7FAf8heMIPZ_qzzvgUh8KrFHSNPRY-6X6FdCHBzPZ1eJMKWJRG6UADEhjU0EnURFiRDVMGTivs0mtt3iPAz3iOzAmo&lib=MgHDHOou1o4U2zwBlqtMHlQMAFukrRMww')
+            fetch('https://qaduockhoa.click/api/tempandhumi?deviceName=temp1')
             .then(response => response.json())
             .then(response => {
-                setDatas(response.slice(-20))
+                setDatas(response)
             })
             .catch((error) => {
                 console.log(error)
             })
-        }, 20000)
+        }, 5000)
 
         return ()=>{
             clearInterval(timeId)
@@ -45,7 +45,7 @@ export default function DenseTable() {
 
     const rows = []
     datas.map((data) =>{
-        rows.push(createData(formatDate(data.time) , data.temp , data.humi))
+        rows.push(createData(formatDateToLocal(data.time) , data.temp , data.humi))
     })
     
 
@@ -53,8 +53,8 @@ export default function DenseTable() {
 
   return (
     <div className="device">
-       <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 300 }} size="small" aria-label="a dense table">
+       <TableContainer component={Paper} sx={{ minWidth: 300 ,maxWidth: 600  , height: 500 , margin: 5 , border : 'solid 1px'}}>
+      <Table sx={{ minWidth: 300 ,maxWidth: 600  }} size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>
             <TableCell>Thời điểm</TableCell>
@@ -79,27 +79,22 @@ export default function DenseTable() {
       </Table>
     </TableContainer>
 
-    <Chart data ={ datas}></Chart>
-    <Chart2 data ={ datas}></Chart2>
-
     </div>
     
   );
 }
 
 
-
-function formatDate(dateString) {
-    const date = new Date(dateString);
-    
-    const day = date.getUTCDate();
-    const month = date.getUTCMonth() + 1; // Tháng 0-11, nên cộng 1
-    const year = date.getUTCFullYear();
-    const hours = date.getUTCHours();
-    const minutes = date.getUTCMinutes();
-    const seconds = date.getSeconds()
-
-    // Định dạng lại thành chuỗi
-    return `${day}/${month}/${year} ${hours}:${minutes < 10 ? '0' : ''}${minutes}:${seconds}`;
+function formatDateToLocal(date) {
+  const d = new Date(date);
+  
+  const day = String(d.getDate()).padStart(2, '0');
+  const month = String(d.getMonth() + 1).padStart(2, '0'); // Tháng bắt đầu từ 0
+  const year = String(d.getFullYear());
+  const hours = String(d.getHours()).padStart(2, '0');
+  const minutes = String(d.getMinutes()).padStart(2, '0');
+  const seconds = String(d.getSeconds()).padStart(2, '0');
+  
+  return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
 }
 
