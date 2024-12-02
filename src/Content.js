@@ -27,7 +27,7 @@ export default function DenseTable() {
 
     useEffect(()=>{
         let timeId = setInterval(()=> {
-            fetch('https://qaduockhoa.click/api/tempandhumi?deviceName=temp1')
+            fetch('http://116.118.50.232:3000/api/tempandhumi?deviceName=temp1')
             .then(response => response.json())
             .then(response => {
                 setDatas(response)
